@@ -29,7 +29,9 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 # CSRF settings (not recommended for production)
-CSRF_TRUSTED_ORIGINS = []
+CSRF_TRUSTED_ORIGINS = [
+    'https://django-polls-ck3y.onrender.com'
+]
 
 # CORS settings (if using django-cors-headers)
 CORS_ALLOW_ALL_ORIGINS = True
@@ -49,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
