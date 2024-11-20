@@ -18,9 +18,9 @@ RUN python -m manage migrate
 # Открываем порт 8000
 EXPOSE 8000
 
-ENV DJANGO_SUPERUSER_USERNAME admin
-ENV DJANGO_SUPERUSER_EMAIL admin@example.com
-ENV DJANGO_SUPERUSER_PASSWORD adminpassword
+ENV DJANGO_SUPERUSER_USERNAME admin1
+ENV DJANGO_SUPERUSER_EMAIL admin1@example.com
+ENV DJANGO_SUPERUSER_PASSWORD admin1
 
 RUN python -m manage createsuperuser --noinput --username $DJANGO_SUPERUSER_USERNAME --email $DJANGO_SUPERUSER_EMAIL
 
