@@ -1,0 +1,15 @@
+{% extends 'polls/base.html' %}
+
+{% block title %}Все опросники{% endblock %}
+
+{% block content %}
+    <h1>Результаты опросников</h1>
+    {% for poll in polls %}
+        <h2>{{ poll.question }}</h2>
+        <ul>
+        {% for choice in poll.choice_set.all %}
+            <li>{{ choice.choice_text }} -- {{ choice.votes }} голосов{{ choice.votes|pluralize }}</li>
+        {% endfor %}
+        </ul>
+    {% endfor %}
+{% endblock %}

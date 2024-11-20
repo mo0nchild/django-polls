@@ -29,3 +29,7 @@ def vote(request, poll_id):
 def results(request, poll_id):
     poll = get_object_or_404(Poll, pk=poll_id)
     return render(request, 'client/results.html', {'poll': poll})
+
+def all_results(request):
+    polls = Poll.objects.all()
+    return render(request, 'polls/all_results.html', {'polls': polls})
