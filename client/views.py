@@ -32,4 +32,4 @@ def results(request, poll_id):
 
 def all_results(request):
     polls = Poll.objects.all()
-    return render(request, 'polls/all_results.html', {'polls': polls})
+    return render(request, 'client/all_results.html', {'polls': polls})
