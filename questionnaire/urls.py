@@ -21,5 +21,6 @@ from client import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('client/', include('client.urls'))
+    path('client/', include('client.urls')),
+    path('', views.index, name='root')
 ]
