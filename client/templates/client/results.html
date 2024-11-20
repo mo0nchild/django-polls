@@ -1,0 +1,16 @@
+<!-- client/templates/polls/results.html -->
+{% extends 'client/base.html' %}
+
+{% block title %}Poll Results{% endblock %}
+
+{% block content %}
+    <h1>{{ poll.question }}</h1>
+
+    <ul>
+    {% for choice in poll.choice_set.all %}
+        <li>{{ choice.choice_text }} -- {{ choice.votes }} голосов{{ choice.votes|pluralize }}</li>
+    {% endfor %}
+    </ul>
+
+    <a href="{% url 'client:detail' poll.id %}">Проголосовать еще раз?</a>
+{% endblock %}
