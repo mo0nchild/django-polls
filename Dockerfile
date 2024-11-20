@@ -19,4 +19,4 @@ EXPOSE 8000
 CMD python -m manage migrate
 
 # Запускаем сервер
-ENTRYPOINT python manage.py runserver localhost:8000
+ENTRYPOINT python manage.py runserver
