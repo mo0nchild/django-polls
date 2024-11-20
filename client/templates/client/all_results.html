@@ -1,4 +1,4 @@
-{% extends 'polls/base.html' %}
+{% extends 'client/base.html' %}
 
 {% block title %}Все опросники{% endblock %}
 
@@ -11,5 +11,6 @@
             <li>{{ choice.choice_text }} -- {{ choice.votes }} голосов{{ choice.votes|pluralize }}</li>
         {% endfor %}
         </ul>
+        <div style="width: 100%; background: #fff; height: 1px; margin: 20px 0px 40px;"></div>
     {% endfor %}
 {% endblock %}
