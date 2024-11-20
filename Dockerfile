@@ -13,11 +13,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Копируем остальные файлы проекта в контейнер
 COPY . .
 
-# Собираем статические файлы
-RUN python manage.py collectstatic --noinput
-
 # Открываем порт 8000
 EXPOSE 8000
 
-# Запускаем сервер Gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "myproject.wsgi:application"]
+CMD python -m manage migrate
+
+# Запускаем сервер
+ENTRYPOINT python manage.py runserver localhost:8000
