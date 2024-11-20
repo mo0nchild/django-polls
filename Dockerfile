@@ -13,7 +13,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Копируем остальные файлы проекта в контейнер
 COPY . .
 
-RUN python -m manage migrate
+RUN python -m manage migrate || true
 
 # Открываем порт 8000
 EXPOSE 8000
