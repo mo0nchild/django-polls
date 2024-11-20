@@ -28,9 +28,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*']
+# CSRF settings (not recommended for production)
+CSRF_TRUSTED_ORIGINS = []
 
-CORS_ALLOWED_ORIGINS = ['http://*', 'https://*']
+# CORS settings (if using django-cors-headers)
+CORS_ALLOW_ALL_ORIGINS = True
 # Application definition
 
 INSTALLED_APPS = [
