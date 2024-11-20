@@ -13,10 +13,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Копируем остальные файлы проекта в контейнер
 COPY . .
 
+RUN python -m manage migrate
+
 # Открываем порт 8000
 EXPOSE 8000
 
-CMD python -m manage migrate
-
 # Запускаем сервер
-ENTRYPOINT python manage.py runserver
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
