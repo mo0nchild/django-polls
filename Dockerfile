@@ -22,7 +22,7 @@ ENV DJANGO_SUPERUSER_USERNAME admin1
 ENV DJANGO_SUPERUSER_EMAIL admin1@example.com
 ENV DJANGO_SUPERUSER_PASSWORD admin1
 
-RUN python -m manage createsuperuser --noinput --username $DJANGO_SUPERUSER_USERNAME --email $DJANGO_SUPERUSER_EMAIL
+RUN python -m manage createsuperuser --noinput --username $DJANGO_SUPERUSER_USERNAME --email $DJANGO_SUPERUSER_EMAIL || true
 
 # Запускаем сервер
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
